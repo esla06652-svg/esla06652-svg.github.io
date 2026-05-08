@@ -1,6 +1,3 @@
-
-
-
 let selectedService = "";
 
 const services = [
@@ -30,16 +27,15 @@ window.onload = function () {
 
     let container = document.getElementById("services");
 
-    services.forEach(service => {
-        let div = document.createElement("div");
-
-        div.className = "serviceBox";
-        div.innerText = service;
-
-        div.onclick = () => openWelcome(service);
-
-        container.appendChild(div);
-    });
+    if (container) {
+        services.forEach(service => {
+            let div = document.createElement("div");
+            div.className = "serviceBox";
+            div.innerText = service;
+            div.onclick = () => openWelcome(service);
+            container.appendChild(div);
+        });
+    }
 
     goHome();
 
@@ -88,7 +84,9 @@ window.onload = function () {
     }
 
     if (slides.length > 0) {
+
         slides[0].classList.add("active");
+
         setInterval(showSlide, 3000);
     }
 };
@@ -98,6 +96,7 @@ function toggleMenu() {
     let menu = document.getElementById("menuList");
 
     if (menu) {
+
         menu.style.display =
             menu.style.display === "block" ? "none" : "block";
     }
@@ -163,63 +162,119 @@ function showServices() {
 
     hideAll();
 
-    document.getElementById("services").style.display = "grid";
+    let el = document.getElementById("services");
 
-    document.getElementById("backBtn").classList.remove("hidden");
+    if (el) {
+        el.style.display = "grid";
+    }
+
+    let backBtn = document.getElementById("backBtn");
+
+    if (backBtn) {
+        backBtn.classList.remove("hidden");
+    }
 }
 
 function showCleaning() {
 
     hideAll();
 
-    document.getElementById("cleaning").style.display = "block";
+    let el = document.getElementById("cleaning");
 
-    document.getElementById("backBtn").classList.remove("hidden");
+    if (el) {
+        el.style.display = "block";
+    }
+
+    let backBtn = document.getElementById("backBtn");
+
+    if (backBtn) {
+        backBtn.classList.remove("hidden");
+    }
 }
 
 function showOffers() {
 
     hideAll();
 
-    document.getElementById("offers").style.display = "grid";
+    let el = document.getElementById("offers");
 
-    document.getElementById("backBtn").classList.remove("hidden");
+    if (el) {
+        el.style.display = "grid";
+    }
+
+    let backBtn = document.getElementById("backBtn");
+
+    if (backBtn) {
+        backBtn.classList.remove("hidden");
+    }
 }
 
 function showOrders() {
 
     hideAll();
 
-    document.getElementById("orders").style.display = "block";
+    let el = document.getElementById("orders");
 
-    document.getElementById("backBtn").classList.remove("hidden");
+    if (el) {
+        el.style.display = "block";
+    }
+
+    let backBtn = document.getElementById("backBtn");
+
+    if (backBtn) {
+        backBtn.classList.remove("hidden");
+    }
 }
 
 function showAbout() {
 
     hideAll();
 
-    document.getElementById("about").style.display = "block";
+    let el = document.getElementById("about");
 
-    document.getElementById("backBtn").classList.remove("hidden");
+    if (el) {
+        el.style.display = "block";
+    }
+
+    let backBtn = document.getElementById("backBtn");
+
+    if (backBtn) {
+        backBtn.classList.remove("hidden");
+    }
 }
 
 function showComplaints() {
 
     hideAll();
 
-    document.getElementById("complaints").style.display = "block";
+    let el = document.getElementById("complaints");
 
-    document.getElementById("backBtn").classList.remove("hidden");
+    if (el) {
+        el.style.display = "block";
+    }
+
+    let backBtn = document.getElementById("backBtn");
+
+    if (backBtn) {
+        backBtn.classList.remove("hidden");
+    }
 }
 
 function showPrivacy() {
 
     hideAll();
 
-    document.getElementById("privacy").style.display = "block";
+    let el = document.getElementById("privacy");
 
-    document.getElementById("backBtn").classList.remove("hidden");
+    if (el) {
+        el.style.display = "block";
+    }
+
+    let backBtn = document.getElementById("backBtn");
+
+    if (backBtn) {
+        backBtn.classList.remove("hidden");
+    }
 }
 
 function openWelcome(service) {
@@ -228,53 +283,79 @@ function openWelcome(service) {
 
     hideAll();
 
-    document.getElementById("welcome").style.display = "block";
+    let el = document.getElementById("welcome");
 
-    document.getElementById("backBtn").classList.remove("hidden");
+    if (el) {
+        el.style.display = "block";
+    }
+
+    let backBtn = document.getElementById("backBtn");
+
+    if (backBtn) {
+        backBtn.classList.remove("hidden");
+    }
 }
 
 function showForm() {
 
     hideAll();
 
-    document.getElementById("formPage").style.display = "block";
+    let el = document.getElementById("formPage");
 
-    document.getElementById("backBtn").classList.remove("hidden");
+    if (el) {
+        el.style.display = "block";
+    }
+
+    let backBtn = document.getElementById("backBtn");
+
+    if (backBtn) {
+        backBtn.classList.remove("hidden");
+    }
 }
 
 function goHome() {
 
     hideAll();
 
-    document.getElementById("home").style.display = "block";
+    let el = document.getElementById("home");
+
+    if (el) {
+        el.style.display = "block";
+    }
 }
 
 function sendComplaint() {
 
-    let text = document.getElementById("complaintText").value;
+    let text = document.getElementById("complaintText");
+
+    if (!text) return;
 
     let url =
-        `https://wa.me/201143724475?text=${encodeURIComponent(text)}`;
+        `https://wa.me/201143724475?text=${encodeURIComponent(text.value)}`;
 
     window.open(url, "_blank");
 }
 
 function sendOrder() {
 
-    let name = document.getElementById("name").value.trim();
+    let name = document.getElementById("name");
+    let phone = document.getElementById("phone");
+    let message = document.getElementById("message");
+    let location = document.getElementById("location");
 
-    let phone = document.getElementById("phone").value.trim();
-
-    let message = document.getElementById("message").value.trim();
-
-    let location = document.getElementById("location").value.trim();
+    if (!name || !phone || !location) {
+        alert("بعض الحقول غير موجودة");
+        return;
+    }
 
     let sendBtn = document.getElementById("sendBtn");
 
-    if (name === "" || phone === "" || location === "") {
-
+    if (
+        name.value.trim() === "" ||
+        phone.value.trim() === "" ||
+        location.value.trim() === ""
+    ) {
         alert("من فضلك اكتب الاسم ورقم التليفون والعنوان");
-
         return;
     }
 
@@ -285,10 +366,10 @@ function sendOrder() {
 
     let order = {
         service: selectedService,
-        name: name,
-        phone: phone,
-        location: location,
-        message: message,
+        name: name.value,
+        phone: phone.value,
+        location: location.value,
+        message: message ? message.value : "",
         date: Date.now()
     };
 
@@ -304,10 +385,10 @@ function sendOrder() {
         "template_zoftj6d",
         {
             service: selectedService,
-            name: name,
-            phone: phone,
-            location: location,
-            message: message
+            name: name.value,
+            phone: phone.value,
+            location: location.value,
+            message: message ? message.value : ""
         }
     )
 
@@ -315,10 +396,10 @@ function sendOrder() {
 
         alert("تم إرسال الطلب بنجاح");
 
-        document.getElementById("name").value = "";
-        document.getElementById("phone").value = "";
-        document.getElementById("message").value = "";
-        document.getElementById("location").value = "";
+        name.value = "";
+        phone.value = "";
+        if (message) message.value = "";
+        location.value = "";
 
         if (sendBtn) {
             sendBtn.disabled = false;
@@ -326,6 +407,7 @@ function sendOrder() {
         }
 
         goHome();
+
     })
 
     .catch(function (error) {
@@ -354,6 +436,8 @@ function showCurrentOrders() {
     let container = document.getElementById("currentOrders");
 
     let old = document.getElementById("oldOrders");
+
+    if (!container || !old) return;
 
     old.classList.add("hidden");
 
@@ -388,7 +472,6 @@ function showCurrentOrders() {
     });
 
     if (container.innerHTML === "") {
-
         container.innerHTML =
             "لا يوجد طلبات تحت التنفيذ";
     }
@@ -399,6 +482,8 @@ function showOldOrders() {
     let container = document.getElementById("oldOrders");
 
     let current = document.getElementById("currentOrders");
+
+    if (!container || !current) return;
 
     current.classList.add("hidden");
 
@@ -433,7 +518,6 @@ function showOldOrders() {
     });
 
     if (container.innerHTML === "") {
-
         container.innerHTML =
             "لا يوجد طلبات سابقة";
     }
