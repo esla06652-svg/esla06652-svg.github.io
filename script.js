@@ -163,6 +163,8 @@ function hideAll() {
         if (element) {
 
             element.style.display = "none";
+
+            element.classList.add("hidden");
         }
     });
 
@@ -181,6 +183,8 @@ function showServices() {
     let el = document.getElementById("services");
 
     if (el) {
+
+        el.classList.remove("hidden");
 
         el.style.display = "grid";
     }
@@ -201,6 +205,8 @@ function showCleaning() {
 
     if (el) {
 
+        el.classList.remove("hidden");
+
         el.style.display = "block";
     }
 
@@ -219,6 +225,8 @@ function showOffers() {
     let el = document.getElementById("offers");
 
     if (el) {
+
+        el.classList.remove("hidden");
 
         el.style.display = "grid";
     }
@@ -239,6 +247,8 @@ function showOrders() {
 
     if (el) {
 
+        el.classList.remove("hidden");
+
         el.style.display = "block";
     }
 
@@ -257,6 +267,8 @@ function showAbout() {
     let el = document.getElementById("about");
 
     if (el) {
+
+        el.classList.remove("hidden");
 
         el.style.display = "block";
     }
@@ -277,6 +289,8 @@ function showComplaints() {
 
     if (el) {
 
+        el.classList.remove("hidden");
+
         el.style.display = "block";
     }
 
@@ -295,6 +309,8 @@ function showPrivacy() {
     let el = document.getElementById("privacy");
 
     if (el) {
+
+        el.classList.remove("hidden");
 
         el.style.display = "block";
     }
@@ -317,6 +333,8 @@ function openWelcome(service) {
 
     if (el) {
 
+        el.classList.remove("hidden");
+
         el.style.display = "block";
     }
 
@@ -336,6 +354,8 @@ function showForm() {
 
     if (el) {
 
+        el.classList.remove("hidden");
+
         el.style.display = "block";
     }
 
@@ -354,6 +374,8 @@ function goHome() {
     let el = document.getElementById("home");
 
     if (el) {
+
+        el.classList.remove("hidden");
 
         el.style.display = "block";
     }
