@@ -466,7 +466,33 @@ function sendOrder() {
 
     .then(function () {
 
-        alert("تم إرسال الطلب بنجاح");
+    let successBox = document.createElement("div");
+
+    successBox.style.position = "fixed";
+    successBox.style.top = "50%";
+    successBox.style.left = "50%";
+    successBox.style.transform = "translate(-50%, -50%)";
+    successBox.style.background = "#1e1e1e";
+    successBox.style.color = "#fff";
+    successBox.style.padding = "20px";
+    successBox.style.borderRadius = "15px";
+    successBox.style.zIndex = "9999";
+    successBox.style.textAlign = "center";
+    successBox.style.fontSize = "20px";
+    successBox.style.width = "80%";
+    successBox.style.maxWidth = "320px";
+    successBox.style.boxShadow = "0 0 20px rgba(0,0,0,0.5)";
+
+    successBox.innerHTML = `
+        <div style="font-size:50px;margin-bottom:10px;">✅</div>
+        <div>تم إرسال الطلب بنجاح</div>
+    `;
+
+    document.body.appendChild(successBox);
+
+    setTimeout(() => {
+        successBox.remove();
+    }, 2500);
 
         name.value = "";
 
