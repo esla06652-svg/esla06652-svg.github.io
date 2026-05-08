@@ -28,11 +28,17 @@ window.onload = function () {
     let container = document.getElementById("services");
 
     if (container) {
+
         services.forEach(service => {
+
             let div = document.createElement("div");
+
             div.className = "serviceBox";
+
             div.innerText = service;
+
             div.onclick = () => openWelcome(service);
+
             container.appendChild(div);
         });
     }
@@ -60,7 +66,9 @@ window.onload = function () {
         });
 
         ordersBtn.addEventListener("touchend", function () {
+
             clearTimeout(pressTimer);
+
         });
     }
 
@@ -71,13 +79,17 @@ window.onload = function () {
     function showSlide() {
 
         slides.forEach((slide) => {
+
             slide.classList.remove("active");
+
         });
 
         index++;
 
         if (index >= slides.length) {
+
             index = 0;
+
         }
 
         slides[index].classList.add("active");
@@ -107,6 +119,7 @@ function closeMenu() {
     let menu = document.getElementById("menuList");
 
     if (menu) {
+
         menu.style.display = "none";
     }
 }
@@ -123,6 +136,7 @@ document.addEventListener("click", function (e) {
         !menu.contains(e.target) &&
         !icon.contains(e.target)
     ) {
+
         menu.style.display = "none";
     }
 });
@@ -147,6 +161,7 @@ function hideAll() {
         let element = document.getElementById(id);
 
         if (element) {
+
             element.style.display = "none";
         }
     });
@@ -154,6 +169,7 @@ function hideAll() {
     let backBtn = document.getElementById("backBtn");
 
     if (backBtn) {
+
         backBtn.classList.add("hidden");
     }
 }
@@ -165,12 +181,14 @@ function showServices() {
     let el = document.getElementById("services");
 
     if (el) {
+
         el.style.display = "grid";
     }
 
     let backBtn = document.getElementById("backBtn");
 
     if (backBtn) {
+
         backBtn.classList.remove("hidden");
     }
 }
@@ -182,12 +200,14 @@ function showCleaning() {
     let el = document.getElementById("cleaning");
 
     if (el) {
+
         el.style.display = "block";
     }
 
     let backBtn = document.getElementById("backBtn");
 
     if (backBtn) {
+
         backBtn.classList.remove("hidden");
     }
 }
@@ -199,12 +219,14 @@ function showOffers() {
     let el = document.getElementById("offers");
 
     if (el) {
+
         el.style.display = "grid";
     }
 
     let backBtn = document.getElementById("backBtn");
 
     if (backBtn) {
+
         backBtn.classList.remove("hidden");
     }
 }
@@ -216,12 +238,14 @@ function showOrders() {
     let el = document.getElementById("orders");
 
     if (el) {
+
         el.style.display = "block";
     }
 
     let backBtn = document.getElementById("backBtn");
 
     if (backBtn) {
+
         backBtn.classList.remove("hidden");
     }
 }
@@ -233,12 +257,14 @@ function showAbout() {
     let el = document.getElementById("about");
 
     if (el) {
+
         el.style.display = "block";
     }
 
     let backBtn = document.getElementById("backBtn");
 
     if (backBtn) {
+
         backBtn.classList.remove("hidden");
     }
 }
@@ -250,12 +276,14 @@ function showComplaints() {
     let el = document.getElementById("complaints");
 
     if (el) {
+
         el.style.display = "block";
     }
 
     let backBtn = document.getElementById("backBtn");
 
     if (backBtn) {
+
         backBtn.classList.remove("hidden");
     }
 }
@@ -267,12 +295,14 @@ function showPrivacy() {
     let el = document.getElementById("privacy");
 
     if (el) {
+
         el.style.display = "block";
     }
 
     let backBtn = document.getElementById("backBtn");
 
     if (backBtn) {
+
         backBtn.classList.remove("hidden");
     }
 }
@@ -286,12 +316,14 @@ function openWelcome(service) {
     let el = document.getElementById("welcome");
 
     if (el) {
+
         el.style.display = "block";
     }
 
     let backBtn = document.getElementById("backBtn");
 
     if (backBtn) {
+
         backBtn.classList.remove("hidden");
     }
 }
@@ -303,12 +335,14 @@ function showForm() {
     let el = document.getElementById("formPage");
 
     if (el) {
+
         el.style.display = "block";
     }
 
     let backBtn = document.getElementById("backBtn");
 
     if (backBtn) {
+
         backBtn.classList.remove("hidden");
     }
 }
@@ -320,6 +354,7 @@ function goHome() {
     let el = document.getElementById("home");
 
     if (el) {
+
         el.style.display = "block";
     }
 }
@@ -339,12 +374,17 @@ function sendComplaint() {
 function sendOrder() {
 
     let name = document.getElementById("name");
+
     let phone = document.getElementById("phone");
+
     let message = document.getElementById("message");
+
     let location = document.getElementById("location");
 
     if (!name || !phone || !location) {
+
         alert("بعض الحقول غير موجودة");
+
         return;
     }
 
@@ -355,21 +395,31 @@ function sendOrder() {
         phone.value.trim() === "" ||
         location.value.trim() === ""
     ) {
+
         alert("من فضلك اكتب الاسم ورقم التليفون والعنوان");
+
         return;
     }
 
     if (sendBtn) {
+
         sendBtn.disabled = true;
+
         sendBtn.innerText = "جاري الإرسال...";
     }
 
     let order = {
+
         service: selectedService,
+
         name: name.value,
+
         phone: phone.value,
+
         location: location.value,
+
         message: message ? message.value : "",
+
         date: Date.now()
     };
 
@@ -397,12 +447,20 @@ function sendOrder() {
         alert("تم إرسال الطلب بنجاح");
 
         name.value = "";
+
         phone.value = "";
-        if (message) message.value = "";
+
+        if (message) {
+
+            message.value = "";
+        }
+
         location.value = "";
 
         if (sendBtn) {
+
             sendBtn.disabled = false;
+
             sendBtn.innerText = "إرسال الطلب";
         }
 
@@ -417,7 +475,9 @@ function sendOrder() {
         console.log(error);
 
         if (sendBtn) {
+
             sendBtn.disabled = false;
+
             sendBtn.innerText = "إرسال الطلب";
         }
     });
@@ -472,6 +532,7 @@ function showCurrentOrders() {
     });
 
     if (container.innerHTML === "") {
+
         container.innerHTML =
             "لا يوجد طلبات تحت التنفيذ";
     }
@@ -518,6 +579,7 @@ function showOldOrders() {
     });
 
     if (container.innerHTML === "") {
+
         container.innerHTML =
             "لا يوجد طلبات سابقة";
     }
