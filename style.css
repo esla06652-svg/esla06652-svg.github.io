@@ -552,19 +552,16 @@ object-fit:cover;
 position:relative;
 z-index:1;
 }
+
 .slideText{
 position:absolute;
 bottom:15px;
 right:15px;
-left:15px;
 z-index:10;
-background:rgba(0,0,0,0.55);
-color:#fff;
-padding:10px;
-border-radius:10px;
-font-size:18px;
+color:gold;
+font-size:22px;
 font-weight:bold;
-text-align:center;
-text-shadow:0 0 10px #000;
+text-shadow:0 0 10px #000,
+0 0 15px #000;
 }
-  
+
