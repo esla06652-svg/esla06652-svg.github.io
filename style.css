@@ -543,18 +543,14 @@ position:relative;
 z-index:1;
 }
 
+
 .slideText{
 position:absolute;
 bottom:15px;
 left:50%;
 transform:translateX(-50%);
-background:rgba(0,0,0,0.5);
 color:gold;
-padding:8px 15px;
-border-radius:10px;
 font-size:20px;
 font-weight:bold;
 z-index:10;
-text-shadow:none;
-white-space:nowrap;
 }
