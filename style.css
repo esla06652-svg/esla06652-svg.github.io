@@ -542,15 +542,19 @@ object-fit:cover;
 position:relative;
 z-index:1;
 }
+
 .slideText{
 position:absolute;
 bottom:15px;
-right:15px;
-z-index:10;
+left:50%;
+transform:translateX(-50%);
+background:rgba(0,0,0,0.5);
 color:gold;
-font-size:22px;
+padding:8px 15px;
+border-radius:10px;
+font-size:20px;
 font-weight:bold;
-text-shadow:0 0 10px #000,
-0 0 15px #000;
+z-index:10;
+text-shadow:none;
+white-space:nowrap;
 }
-
