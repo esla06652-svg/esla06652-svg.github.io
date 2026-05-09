@@ -533,10 +533,90 @@ function sendOrder() {
 
 function contactUs() {
 
-    window.open(
-        "https://wa.me/201143724475",
-        "_blank"
-    );
+    hideAll();
+
+    let el = document.getElementById("contactBox");
+
+    if (el) {
+
+        el.classList.remove("hidden");
+
+        el.style.display = "block";
+    }
+
+    let backBtn = document.getElementById("backBtn");
+
+    if (backBtn) {
+
+        backBtn.classList.remove("hidden");
+    }
+}
+
+function sendContactMessage() {
+
+    let message = document.getElementById("contactMessage");
+
+    if (!message || message.value.trim() === "") {
+
+        alert("اكتب رسالتك");
+
+        return;
+    }
+
+    emailjs.send(
+        "service_94l7und",
+        "template_zoftj6d",
+        {
+            service: "تواصل معنا",
+            name: "رسالة جديدة",
+            phone: "غير موجود",
+            location: "غير موجود",
+            message: message.value
+        }
+    )
+
+    .then(function () {
+
+        let successBox = document.createElement("div");
+
+        successBox.style.position = "fixed";
+        successBox.style.top = "50%";
+        successBox.style.left = "50%";
+        successBox.style.transform = "translate(-50%, -50%)";
+        successBox.style.background = "#1e1e1e";
+        successBox.style.color = "#fff";
+        successBox.style.padding = "20px";
+        successBox.style.borderRadius = "15px";
+        successBox.style.zIndex = "9999";
+        successBox.style.textAlign = "center";
+        successBox.style.fontSize = "20px";
+
+        successBox.innerHTML = `
+            <div style="font-size:50px;margin-bottom:10px;">✅</div>
+            <div>تم إرسال الرسالة بنجاح</div>
+        `;
+
+        document.body.appendChild(successBox);
+
+        setTimeout(() => {
+
+            successBox.remove();
+
+        }, 2500);
+
+        message.value = "";
+
+        goHome();
+
+    })
+
+    .catch(function(error) {
+
+        alert("حدث خطأ أثناء الإرسال");
+
+        console.log(error);
+
+    });
 }
 
 function showCurrentOrders() {
