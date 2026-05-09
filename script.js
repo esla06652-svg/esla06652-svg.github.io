@@ -144,17 +144,18 @@ document.addEventListener("click", function (e) {
 function hideAll() {
 
     let sections = [
-        "home",
-        "services",
-        "cleaning",
-        "offers",
-        "orders",
-        "complaints",
-        "about",
-        "privacy",
-        "welcome",
-        "formPage"
-    ];
+    "home",
+    "services",
+    "cleaning",
+    "offers",
+    "orders",
+    "complaints",
+    "about",
+    "privacy",
+    "welcome",
+    "formPage",
+    "contactBox"
+];
 
     sections.forEach(id => {
 
