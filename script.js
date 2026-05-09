@@ -382,18 +382,73 @@ function goHome() {
     }
 }
 
+
 function sendComplaint() {
 
     let text = document.getElementById("complaintText");
 
-    if (!text) return;
+    if (!text || text.value.trim() === "") {
 
-    let url =
-        `https://wa.me/201143724475?text=${encodeURIComponent(text.value)}`;
+        alert("اكتب الشكوى أو الاقتراح");
 
-    window.open(url, "_blank");
+        return;
+    }
+
+    emailjs.send(
+        "service_94l7und",
+        "template_zoftj6d",
+        {
+            service: "شكوى أو اقتراح",
+            name: "رسالة جديدة",
+            phone: "غير موجود",
+            location: "غير موجود",
+            message: text.value
+        }
+    )
+
+    .then(function () {
+
+        let successBox = document.createElement("div");
+
+        successBox.style.position = "fixed";
+        successBox.style.top = "50%";
+        successBox.style.left = "50%";
+        successBox.style.transform = "translate(-50%, -50%)";
+        successBox.style.background = "#1e1e1e";
+        successBox.style.color = "#fff";
+        successBox.style.padding = "20px";
+        successBox.style.borderRadius = "15px";
+        successBox.style.zIndex = "9999";
+        successBox.style.textAlign = "center";
+        successBox.style.fontSize = "20px";
+
+        successBox.innerHTML = `
+            <div style="font-size:50px;margin-bottom:10px;">✅</div>
+            <div>تم إرسال الرسالة بنجاح</div>
+        `;
+
+        document.body.appendChild(successBox);
+
+        setTimeout(() => {
+
+            successBox.remove();
+
+        }, 2500);
+
+        text.value = "";
+
+        goHome();
+
+    })
+
+    .catch(function(error) {
+
+        alert("حدث خطأ أثناء الإرسال");
+
+        console.log(error);
+
+    });
 }
-
 function sendOrder() {
 
     let name = document.getElementById("name");
