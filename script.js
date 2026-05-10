@@ -50,7 +50,6 @@ window.onload = function () {
     if (ordersBtn) {
 
         let pressTimer;
-
         ordersBtn.addEventListener("touchstart", function () {
 
             pressTimer = setTimeout(function () {
@@ -781,30 +780,19 @@ function clearOrders() {
     }
 }
 
+
 function goBack() {
 
-document.getElementById("home").classList.remove("hidden");
+hideAll();
 
-document.getElementById("services").classList.add("hidden");
+let el = document.getElementById("home");
 
-document.getElementById("cleaning").classList.add("hidden");
+if (el) {
 
-document.getElementById("offers").classList.add("hidden");
+el.classList.remove("hidden");
 
-document.getElementById("orders").classList.add("hidden");
+el.style.display = "block";
 
-document.getElementById("about").classList.add("hidden");
-
-document.getElementById("complaints").classList.add("hidden");
-
-document.getElementById("privacy").classList.add("hidden");
-
-document.getElementById("welcome").classList.add("hidden");
-
-document.getElementById("formPage").classList.add("hidden");
-
-document.getElementById("contactBox").classList.add("hidden");
-
-document.getElementById("backBtn").classList.add("hidden");
+}
 
 }
