@@ -568,3 +568,39 @@ box-shadow:0 0 10px rgba(0,0,0,0.5);
 
 z-index:10;
 }
+
+.featuresBox{
+width:90%;
+margin:40px auto 20px;
+padding:20px 15px;
+background:#111;
+border-radius:18px;
+box-shadow:0 0 15px rgba(255,215,0,0.15);
+}
+
+.featureItem{
+display:flex;
+align-items:center;
+justify-content:flex-start;
+gap:12px;
+margin:18px 0;
+color:#fff;
+font-size:15px;
+line-height:28px;
+text-align:right;
+}
+
+.featureItem i{
+color:gold;
+font-size:18px;
+min-width:22px;
+text-shadow:0 0 10px gold;
+}
+
+.privacyLinkBottom{
+margin-top:25px;
+font-size:14px;
+color:#bbb;
+text-decoration:underline;
+cursor:pointer;
+}
