@@ -193,30 +193,46 @@ if (backBtn) {
 }
 
 }
-
 function showPage(pageId, displayType = "block") {
 
-hideAll();  
+hideAll();
 
-savePage(pageId);  
+savePage(pageId);
 
-let el = document.getElementById(pageId);  
+let el = document.getElementById(pageId);
 
-if (el) {  
+if (el) {
 
-    el.classList.remove("hidden");  
+    el.classList.remove("hidden");
 
-    el.style.display = displayType;  
-}  
+    el.style.display = displayType;
+}
 
-if (pageId !== "home") {  
+let featuresBox = document.querySelector(".featuresBox");
 
-    let backBtn = document.getElementById("backBtn");  
+if (featuresBox) {
 
-    if (backBtn) {  
+    if (
+        pageId === "orders" ||
+        pageId === "formPage"
+    ) {
 
-        backBtn.classList.remove("hidden");  
-    }  
+        featuresBox.style.display = "none";
+
+    } else {
+
+        featuresBox.style.display = "block";
+    }
+}
+
+if (pageId !== "home") {
+
+    let backBtn = document.getElementById("backBtn");
+
+    if (backBtn) {
+
+        backBtn.classList.remove("hidden");
+    }
 }
 
 }
