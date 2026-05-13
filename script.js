@@ -739,3 +739,26 @@ if (confirm("هل تريد مسح كل الطلبات؟")) {
 
 }
 
+
+window.addEventListener("offline", function () {
+
+hideAll();
+
+let page = document.getElementById("offlinePage");
+
+if(page){
+
+page.classList.remove("hidden");
+
+page.style.display = "block";
+
+}
+
+});
+
+window.addEventListener("online", function () {
+
+goHome();
+
+});
+
