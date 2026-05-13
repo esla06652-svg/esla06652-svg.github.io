@@ -604,3 +604,51 @@ color:#bbb;
 text-decoration:underline;
 cursor:pointer;
 }
+
+
+#splash{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:#000;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+z-index:999999;
+animation:fadeSplash 0.8s ease;
+}
+
+.splashLogo{
+color:gold;
+font-size:32px;
+text-align:center;
+text-shadow:
+0 0 10px gold,
+0 0 20px gold,
+0 0 40px gold;
+margin:0;
+padding:0 15px;
+}
+
+.splashText{
+color:#fff;
+margin-top:15px;
+font-size:16px;
+opacity:0.8;
+text-align:center;
+}
+
+@keyframes fadeSplash{
+
+from{
+opacity:0;
+}
+
+to{
+opacity:1;
+}
+
+}
