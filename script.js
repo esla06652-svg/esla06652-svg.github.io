@@ -47,6 +47,18 @@ if (container) {
 
 goHome();  
 
+   setTimeout(function(){
+
+let splash = document.getElementById("splash");
+
+if(splash){
+
+splash.style.display = "none";
+
+}
+
+},2000); 
+
 let ordersBtn = document.querySelector(".bottomNav div:nth-child(4)");  
 
 if (ordersBtn) {  
