@@ -428,24 +428,13 @@ z-index:999999;
 animation:fadeSplash 0.8s ease;
 }
 
-.splashLogo{
-color:gold;
-font-size:32px;
-text-align:center;
-text-shadow:
-0 0 10px gold,
-0 0 20px gold,
-0 0 40px gold;
-margin:0;
-padding:0 15px;
-}
-
-.splashText{
-color:#fff;
-margin-top:15px;
-font-size:16px;
-opacity:0.8;
-text-align:center;
+.splashImage{
+width:85%;
+max-width:340px;
+border-radius:20px;
+box-shadow:
+0 0 20px #ffae00,
+0 0 40px #0066ff;
 }
 
 @keyframes fadeSplash{
@@ -456,3 +445,4 @@ to{
 opacity:1;
 }
 }
+
