@@ -359,8 +359,7 @@ box-shadow:0 0 15px gold;
 
 .slide{
 width:100%;
-height:100%;        /* نفس ارتفاع السلايدر */
-object-fit:cover;   /* يخلي الصورة تملأ المساحة */
+height:100%;        /* نفس ارتفاع السلايدر */  /* يخلي الصورة تملأ المساحة */
 display:none;
 border-radius:15px;
 }
@@ -373,13 +372,18 @@ animation:fade 1s;
 .slider{
 position:relative;
 }
-
 .slide{
 position:absolute;
 top:0;
 left:0;
 width:100%;
 height:100%;
+}
+
+.slide img{
+width:100%;
+height:100%;
+object-fit:cover;
 }
 .slideText{
 position:absolute;
@@ -540,9 +544,9 @@ cursor:pointer;
 .slide img{
 width:100%;
 height:100%;
-object-fit:cover;
 position:relative;
 z-index:1;
+  object-fit:cover;
 }
 
 .slideText{
