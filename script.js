@@ -463,7 +463,35 @@ if (
 }
 
 if(!/^01[0-9]{9}$/.test(phone.value)){
-alert("اكتب رقم هاتف مصري صحيح");
+let errorBox = document.createElement("div");
+
+errorBox.style.position = "fixed";
+errorBox.style.top = "50%";
+errorBox.style.left = "50%";
+errorBox.style.transform = "translate(-50%, -50%)";
+errorBox.style.background = "#1e1e1e";
+errorBox.style.color = "#fff";
+errorBox.style.padding = "20px";
+errorBox.style.borderRadius = "15px";
+errorBox.style.zIndex = "9999";
+errorBox.style.textAlign = "center";
+errorBox.style.fontSize = "20px";
+errorBox.style.width = "80%";
+errorBox.style.maxWidth = "320px";
+errorBox.style.boxShadow = "0 0 20px rgba(255,0,0,0.5)";
+
+errorBox.innerHTML = `
+<div style="font-size:50px;margin-bottom:10px;">❌</div>
+<div>اكتب رقم هاتف مصري صحيح</div>
+`;
+
+document.body.appendChild(errorBox);
+
+setTimeout(() => {
+
+errorBox.remove();
+
+}, 2500);
 return;
 }
 
