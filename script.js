@@ -459,15 +459,6 @@ if (
 ) {  
 
     alert("من فضلك اكتب الاسم ورقم التليفون والعنوان");  
-
-if (
-    name.value.trim() === "" ||
-    phone.value.trim() === "" ||
-    location.value.trim() === ""
-) {
-
-    alert("من فضلك اكتب الاسم ورقم التليفون والعنوان");
-
     return;
 }
 
@@ -476,15 +467,7 @@ alert("اكتب رقم هاتف مصري صحيح");
 return;
 }
 
-if (sendBtn) {
 
-    sendBtn.disabled = true;
-
-    sendBtn.innerText = "جاري الإرسال...";
-}
-
-    return;  
-}  
 
 if (sendBtn) {  
 
