@@ -46,18 +46,24 @@ if (container) {
 }  
 
 goHome();  
-
-   setTimeout(function(){
+setTimeout(function(){
 
 let splash = document.getElementById("splash");
 
 if(splash){
 
+splash.style.opacity = "0";
+
+setTimeout(() => {
+
 splash.style.display = "none";
+
+},400);
 
 }
 
-},2000); 
+},800);
+   
 
 let ordersBtn = document.querySelector(".bottomNav div:nth-child(4)");  
 
