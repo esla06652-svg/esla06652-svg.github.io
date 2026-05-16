@@ -46,23 +46,7 @@ if (container) {
 }  
 
 goHome();  
-setTimeout(function(){
 
-let splash = document.getElementById("splash");
-
-if(splash){
-
-splash.style.opacity = "0";
-
-setTimeout(() => {
-
-splash.style.display = "none";
-
-},400);
-
-}
-
-},800);
    
 
 let ordersBtn = document.querySelector(".bottomNav div:nth-child(4)");  
@@ -813,4 +797,21 @@ window.addEventListener("online", function () {
 goHome();
 
 });
+
+
+window.addEventListener("load", function () {
+  setTimeout(function () {
+    const splash = document.getElementById("splash");
+
+    if (splash) {
+      splash.style.opacity = "0";
+
+      setTimeout(function () {
+        splash.style.display = "none";
+      }, 500);
+    }
+
+  }, 3000);
+});
+
 
