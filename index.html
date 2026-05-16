@@ -629,5 +629,24 @@ onclick="sendContactMessage()">
 emailjs.init("YyLr9AaPf4ndV53Ck");
 </script>
 
+  <!-- كل محتوى الموقع بتاعك هنا -->
+
+<!-- Splash + الصفحة + كل حاجة -->
+
+<script>
+window.addEventListener("load", function () {
+  setTimeout(function () {
+    let splash = document.getElementById("splash");
+    splash.style.opacity = "0";
+
+    setTimeout(function () {
+      splash.style.display = "none";
+    }, 500);
+
+  }, 3000);
+});
+</script>
+
 </body>
 </html>
+
