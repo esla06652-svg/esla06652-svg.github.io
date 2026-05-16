@@ -445,14 +445,43 @@ opacity:1;
 }
 }
 
+#splash{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:#000;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+z-index:999999;
+text-align:center;
+}
 
 .splashLogo{
-width:50%;
+width:70%;
+max-width:320px;
 height:auto;
-display:block;
-margin:auto;
-position:absolute;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
+object-fit:contain;
+animation: splashZoom 1.5s ease-in-out;
+}
+
+.splashText{
+color:gold;
+font-size:20px;
+margin-top:10px;
+text-shadow:0 0 10px gold;
+}
+
+@keyframes splashZoom{
+0%{
+opacity:0;
+transform:scale(0.7);
+}
+100%{
+opacity:1;
+transform:scale(1);
+}
 }
